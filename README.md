@@ -100,6 +100,6 @@ For Visual Studio from the solution explorer simply right click on the project a
 
 Do not Forget to set the __MerchantID__ in the __HomeController__ before start.
 
-### Contributing :two_men_holding_hands:
+### Contributing and Questions :two_men_holding_hands:
 
 If you had any question or suggestion feel free to use __pull requests__ or __issues__, we are glad to be in touch with you.
