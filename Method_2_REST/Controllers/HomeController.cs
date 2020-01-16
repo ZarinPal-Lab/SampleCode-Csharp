@@ -21,7 +21,7 @@ namespace NewZarinPal.Controllers
             var _url = "https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json";
             var _values = new Dictionary<string, string>
                 {
-                    { "MerchantID", "731721e6-7d84-11e7-b3ed-005056a205be" },
+                    { "MerchantID", "YOUR-ZARINPAL-MERCHANT-CODE" }, //Change This To work, some thing like this : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
                     { "Amount", "500" }, //Toman
                     { "CallbackURL", "http://localhost:5000/Home/VerifyPayment" },
                     { "Description", "خرید تست" }
