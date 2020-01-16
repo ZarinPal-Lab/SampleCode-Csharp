@@ -5,19 +5,32 @@ There are two samples for C# (REST and SOAP)
 
 The __Rest__ sample is preferred by __Zarinpal__, by the way you are free to choose between REST and SOAP
 
-### Prerequistics :page_with_curl:
-To run sample of __REST__ you must have installed these prerequestics
-
-* [.Net Core 3.1](https://dotnet.microsoft.com/download)
-
-These Edittors are tested : 
-* Visual Studio 2019
-* VSCode
-
 ### How It works simply :bicyclist:
+1. Install Package
 
-1. Request Payment
+* __Newtonsoft.Json__
 
+You can install __Newtonsoft.Json__ with this command 
+for VSCode :
+```
+Dotnet Add Package Newtonsoft.Json
+```
+for Visual studio 2019 through the nuget or the command below :
+```
+Install-Package Newtonsoft.Json
+```
+2. NameSpaces
+```
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using NewZarinPal.Models;
+```
+
+3. PaymentRequest 
 ```
  public async Task<IActionResult> RequestPayment()
         {
@@ -52,9 +65,7 @@ These Edittors are tested :
             //return Redirect("https://www.zarinpal.com/pg/StartPay/" + _zarinPalResponseModel.Authority);
         }
 ```
-
-2. VerifyPayment
-
+4. VerifyPayment
 ```
 public async Task<IActionResult> VerifyPayment(string Authority)
         {
@@ -81,8 +92,37 @@ public async Task<IActionResult> VerifyPayment(string Authority)
             return View();
         }
 ```
-
+5. Models
+```
+public class ZarinPalRequestResponseModel
+     {
+         public int Status { get; set; }
+         public string Authority { get; set; }
+     }
+public class ZarinPalVerifyResponseModel
+     {
+         public int Status { get; set; }
+         public string RefID { get; set; }
+     }
+```
+6. View for both __PaymentRequest__ And __VerifyPayment__
+```
+<div class="text-center">
+    <h6>@ViewBag.StatusCode</h6>
+    <h6>@ViewBag.responseString</h6>
+</div>
+```
 ### Build Instructions for REST sample project :hammer:
+
+#### Prerequistics :page_with_curl:
+To run sample of __REST__ you must have installed these prerequestics
+
+* [.Net Core 3.1](https://dotnet.microsoft.com/download)
+
+These Edittors are tested : 
+* Visual Studio 2019
+* VSCode
+
 If you desier to run The __Rest__ sample in __VSCode__ remember ro run this command in the terminal after openning the project
 ```
 Dotnet Restore
