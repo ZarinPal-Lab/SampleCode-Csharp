@@ -61,8 +61,9 @@ using NewZarinPal.Models;
             if (_zarinPalResponseModel.Status != 100) //Zarinpal Did not Accepted the payment
                 return View();
 
-            return Redirect("https://www.zarinpal.com/pg/StartPay/"+_zarinPalResponseModel.Authority+"/Sad");
-            //return Redirect("https://www.zarinpal.com/pg/StartPay/" + _zarinPalResponseModel.Authority);
+            // [/ُSad] will redirect to the sadad gateway if you already have zarin gate enabled, let's read here
+            // https://www.zarinpal.com/blog/زرین-گیت،-درگاهی-اختصاصی-به-نام-وبسایت/
+            return Redirect("https://www.zarinpal.com/pg/StartPay/"+_zarinPalResponseModel.Authority/*+"/Sad"*/); 
         }
 ```
 4. VerifyPayment
