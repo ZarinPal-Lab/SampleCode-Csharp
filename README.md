@@ -113,6 +113,18 @@ public class ZarinPalVerifyResponseModel
     <h6>@ViewBag.responseString</h6>
 </div>
 ```
+7. How to use __SandBox__ mode
+replace
+```
+https://www.zarinpal.com
+```
+with
+```
+https://sandbox.zarinpal.com
+```
+every where
+
+
 ### Build Instructions for REST sample project :hammer:
 
 #### Prerequistics :page_with_curl:
