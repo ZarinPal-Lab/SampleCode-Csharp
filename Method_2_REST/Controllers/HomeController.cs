@@ -18,7 +18,10 @@ namespace NewZarinPal.Controllers
         }
         public async Task<IActionResult> RequestPayment()
         {
+            //SandBox Mode
+            //var _url = "https://sandbox.zarinpal.com/pg/rest/WebGate/PaymentRequest.json";
             var _url = "https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json";
+            
             var _values = new Dictionary<string, string>
                 {
                     { "MerchantID", "YOUR-ZARINPAL-MERCHANT-CODE" }, //Change This To work, some thing like this : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -45,13 +48,19 @@ namespace NewZarinPal.Controllers
             if (_zarinPalResponseModel.Status != 100) //Zarinpal Did not Accepted the payment
                 return View();
 
-             // [/ُSad] will redirect to the sadad gateway if you already have zarin gate enabled, let's read here
+            //SandBox Mode
+            //return Redirect("https://sandbox.zarinpal.com/pg/StartPay/"+_zarinPalResponseModel.Authority/*+"/Sad"*/); 
+            
+            // [/ُSad] will redirect to the sadad gateway if you already have zarin gate enabled, let's read here
             // https://www.zarinpal.com/blog/زرین-گیت،-درگاهی-اختصاصی-به-نام-وبسایت/
             return Redirect("https://www.zarinpal.com/pg/StartPay/"+_zarinPalResponseModel.Authority/*+"/Sad"*/); 
         }
         public async Task<IActionResult> VerifyPayment(string Authority)
         {
+            //SandBox Mode
+            //var _url = "https://sandbox.zarinpal.com/pg/rest/WebGate/PaymentVerification.json";
             var _url = "https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json";
+            
             var _values = new Dictionary<string, string>
                 {
                     { "MerchantID", "YOUR-ZARINPAL-MERCHANT-CODE" }, //Change This To work, some thing like this : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
