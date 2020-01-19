@@ -19,7 +19,7 @@ for Visual studio 2019 through the nuget or the command below :
 ```
 Install-Package Newtonsoft.Json
 ```
-2. NameSpaces
+2. Namespaces
 ```
 using System.Collections.Generic;
 using System.Net.Http;
