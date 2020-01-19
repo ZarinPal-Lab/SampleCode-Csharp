@@ -159,9 +159,6 @@ $RECYCLE.BIN/
 .DS_Store
 
 
-#######################
-## nopCommerce specific
-###########
 glob:*.user
 *.patch
 *.hg
