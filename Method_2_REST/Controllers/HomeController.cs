@@ -27,6 +27,7 @@ namespace NewZarinPal.Controllers
                     { "MerchantID", "YOUR-ZARINPAL-MERCHANT-CODE" }, //Change This To work, some thing like this : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
                     { "Amount", "500" }, //Toman
                     { "CallbackURL", "http://localhost:5000/Home/VerifyPayment" },
+                    { "Mobile", "CUSTOMER-MOBLIE-NUMBER" }, //Mobile number will be shown in the transactions list as a separate field.
                     { "Description", "This is a test payment" }
                 };
 
