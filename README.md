@@ -40,7 +40,7 @@ using NewZarinPal.Models;
                     { "MerchantID", "YOUR-ZARINPAL-MERCHANT-CODE" }, //Change This To work, some thing like this : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
                     { "Amount", "500" }, //Toman
                     { "CallbackURL", "http://localhost:5000/Home/VerifyPayment" },
-                    { "Mobile", "CUSTOMER-MOBLIE-NUMBER" }, //Mobile number will be shown in the transactions list as a separate field.
+                    { "Mobile", "CUSTOMER-MOBLIE-NUMBER" }, //Mobile number will be shown in the transactions list of the wallet as a separate field.
                     { "Description", "خرید تست" }
                 };
 
