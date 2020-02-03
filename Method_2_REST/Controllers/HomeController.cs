@@ -28,6 +28,7 @@ namespace NewZarinPal.Controllers
                     { "Amount", "500" }, //Toman
                     { "CallbackURL", "http://localhost:5000/Home/VerifyPayment" },
                     { "Mobile", "CUSTOMER-MOBLIE-NUMBER" }, //Mobile number will be shown in the transactions list of the wallet as a separate field.
+                    { "Email", "CUSTOMER-Email-Address" }, //Email Address will be shown in the transactions list of the wallet as a separate field.
                     { "Description", "This is a test payment" }
                 };
 
